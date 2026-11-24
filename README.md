@@ -1,24 +1,37 @@
+**RU** · [EN](README_EN.md)　 /　 [Профиль](https://github.com/mrjakeball) · [Каталог проектов](https://github.com/mrjakeball/portfolio)
+
 # AppSec Labs
 
-My practical Application Security learning portfolio.
+Шесть учебных работ по контролю доступа, статическому анализу Python и функциональным проверкам REST API. У каждой есть отчёт на двух языках и исходные материалы.
 
-## Goals
+![Web Security · 3 / SAST · 2 / API Testing · 1](assets/social-preview.jpg)
 
-- Learn web application security
-- Practice API security testing
-- Solve PortSwigger Web Security Academy labs
-- Write Python security automation scripts
-- Learn SAST and DAST tools
+## Web Security
 
-## Tools
+**[Unprotected Admin Functionality](portswigger/01-access-control/README.md)**  
+Сервер принял административное действие без проверки роли. Проверку полномочий нужно выполнять для каждого привилегированного действия.
 
-- Python
-- Burp Suite
-- Postman
-- Semgrep
-- Bandit
-- Docker
+**[Unpredictable Admin URL](portswigger/02-unpredictable-admin-url/README.md)**  
+Непредсказуемый адрес панели оказался доступен клиенту. Доступ к панели и её действиям должен зависеть от роли пользователя.
 
-## Progress
+**[IDOR · User Profile](portswigger/03-idor-user-profile/README.md)**  
+Сервер вернул данные чужого тестового профиля. При чтении записи нужно проверять право текущего пользователя именно на этот объект.
 
-Currently setting up my AppSec learning environment.
+## SAST
+
+**[Python eval() Security](sast/01-python-bandit/README.md)**  
+Калькулятор перешёл от выполнения введённого выражения к разбору двух чисел и разрешённой операции. После исправления Bandit перестал выдавать B307.
+
+**[OS Command Injection](sast/02-command-injection/README.md)**  
+После перехода к списку аргументов Bandit перестал выдавать B602. Два предупреждения низкой важности остались и разобраны отдельно.
+
+## API Testing
+
+**[REST API Fundamentals](api-testing/01-rest-api-fundamentals/README.md)**  
+Шесть HTTP-запросов, пять методов и 34 функциональные проверки. В сохранённом запуске прошли 34 из 34. Затем экспорт коллекции исправили. Повторный запуск исправленного файла пока не подтверждён.
+
+## Материалы отчётов
+
+В работах PortSwigger приложены подтверждения выполнения. В SAST можно сопоставить предупреждения с исправленным Python-кодом. В API Testing доступны коллекция Postman и снимок Collection Runner. Эта работа проверяет поведение учебного API.
+
+[Профиль](https://github.com/mrjakeball) · [Каталог проектов](https://github.com/mrjakeball/portfolio)

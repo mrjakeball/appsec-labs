@@ -1,24 +1,20 @@
-# 🔐 Lab 03 — User ID Controlled by Request Parameter
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 Web Security
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# IDOR · User Profile
 
-**Platform:** PortSwigger Web Security Academy  
-**Category:** Access Control / IDOR  
-**Difficulty:** Apprentice  
-**Status:** ✅ Solved  
-**Primary Tool:** Burp Suite Community Edition
+**Recorded finding.** The server returned another test account’s profile. Reading a record requires a check that the current user is allowed to access that particular object.
 
-[Open the Original Lab](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)
+PortSwigger Web Security Academy · Apprentice · Burp Suite Community
 
----
+[Original screenshots](assets/) · [PortSwigger](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)
 
-## 🎯 Objective
+## Objective
 
 Investigate user profile access controls and identify a vulnerability that allows an authenticated user to access another user's confidential information.
 
 The objective was to obtain the API key belonging to the test user `carlos` while using the `wiener` account.
 
-## 🔍 Identified Vulnerability
+## Identified Vulnerability
 
 **Type:** Insecure Direct Object Reference (IDOR).
 
@@ -41,14 +37,14 @@ By modifying the `id` parameter, a user can access information belonging to anot
 
 **Key finding:** The application accepts a client-controlled object identifier without enforcing sufficient object-level authorization.
 
-## 🛠️ Tools Used
+## Tools Used
 
 - **Burp Suite Community Edition** — manual application security testing.
 - **Proxy → HTTP History** — inspection of HTTP traffic.
 - **Repeater** — modification and replay of requests.
 - **Burp Browser** — interaction with the training application.
 
-## 🧪 Testing Process
+## Testing Process
 
 ### Step 1. Authentication
 
@@ -106,21 +102,17 @@ The API key obtained within the authorized training environment was used to sati
 
 PortSwigger confirmed successful completion with the **Lab Solved** status.
 
----
-
-## 📸 Proof of Completion
+## Proof of Completion
 
 The screenshot below demonstrates the modified profile request in Burp Suite Repeater and the successful lab result.
 
 <p align="center">
-  <img src="./assets/lab-03-idor-proof.png" alt="Burp Suite Repeater — confirmed IDOR vulnerability and Lab Solved status" width="100%" />
+  <a href="./assets/lab-03-idor-proof.png"><img src="./assets/lab-03-idor-proof.png" alt="Burp Suite Repeater — confirmed IDOR vulnerability and Lab Solved status" width="100%" /></a>
 </p>
 
 *Result: The carlos profile was accessible after modifying the id parameter. The lab was completed successfully. Sensitive values have been hidden.*
 
----
-
-## 🛡️ Remediation Recommendations
+## Remediation Recommendations
 
 1. **Authentication.** Identify the requesting user through a trusted server-side session or validated authentication token.
 2. **Object-Level Authorization.** Verify that each user is permitted to access the specific requested resource.
@@ -133,7 +125,7 @@ Changing the HTTP method from GET to POST would not fix the vulnerability. Prope
 
 **Key principle:** Authentication establishes a user's identity, while authorization determines which resources that user is permitted to access.
 
-## ✅ Result
+## Result
 
 **Lab successfully completed.**
 
@@ -148,6 +140,6 @@ Changing the HTTP method from GET to POST would not fix the vulnerability. Prope
 
 **Independence level:** identified the key request parameter independently; completed the testing process with guided learning hints.
 
----
-
 *All testing was performed exclusively within the authorized PortSwigger Web Security Academy environment. No real user data or secrets are published in this report.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

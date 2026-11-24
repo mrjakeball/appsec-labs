@@ -1,6 +1,10 @@
-# SAST Lab 02 — OS Command Injection (Bandit & Semgrep)
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 SAST
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# OS Command Injection
+
+**Recorded finding.** After the change to an argument list, Bandit no longer reported B602. Two low-severity warnings remained and are documented separately.
+
+[Original screenshots](assets/) · [Revised Python code](secure.py)
 
 ## Objective
 
@@ -51,6 +55,8 @@ The separate `INJECTED` output demonstrated that user-controlled input could inf
 
 ![Successful OS Command Injection demonstration](./assets/injection-proof.png)
 
+<sub>[View original](./assets/injection-proof.png)</sub>
+
 The proof of concept was performed exclusively against a locally developed educational application using a harmless `echo` command.
 
 ## Static Analysis — Bandit
@@ -71,6 +77,8 @@ The most significant finding was **B602**, classified as **High severity**.
 Importing `subprocess` is not inherently a vulnerability. However, combining shell execution with untrusted input created an exploitable command injection issue in this application.
 
 ![Bandit B602 High severity finding](./assets/bandit-b602.png)
+
+<sub>[View original](./assets/bandit-b602.png)</sub>
 
 ## Remediation
 
@@ -107,6 +115,8 @@ The complete input was treated as literal text. No additional shell command was 
 
 ![Manual validation of the remediated application](./assets/injection-fixed.png)
 
+<sub>[View original](./assets/injection-fixed.png)</sub>
+
 ## Bandit Rescan
 
 The corrected implementation was analyzed using:
@@ -127,6 +137,8 @@ The earlier **B607** warning was also eliminated by replacing the partial execut
 The remaining B404 and B603 findings are contextual warnings. They do not, by themselves, demonstrate an exploitable vulnerability in this implementation.
 
 ![Bandit scan after remediation](./assets/bandit-fixed.png)
+
+<sub>[View original](./assets/bandit-fixed.png)</sub>
 
 ## Semgrep Analysis
 
@@ -181,3 +193,5 @@ Follow-up testing confirmed that the previous injection technique no longer work
 **Key takeaway:** Effective application security requires understanding the root cause and actual exploitability of findings rather than simply attempting to eliminate every scanner warning.
 
 *This lab was conducted solely for educational purposes against a self-developed local application.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

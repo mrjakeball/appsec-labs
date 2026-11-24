@@ -1,6 +1,10 @@
-# SAST Lab 01 — Python Security Analysis (Bandit & Semgrep)
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 SAST
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# Python eval() Security
+
+**Recorded finding.** The calculator now parses two numbers and an allowed operator. Bandit no longer reported B307 after that change.
+
+[Original screenshots](assets/) · [Revised Python code](secure.py)
 
 ## Objective
 
@@ -29,6 +33,8 @@ Because `eval()` interprets a string as a Python expression, passing untrusted i
 - Location: `vulnerable.py`, line 2
 
 ![Bandit B307 finding](./assets/bandit-b307.png)
+
+<sub>[View original](./assets/bandit-b307.png)</sub>
 
 ## Remediation
 
@@ -63,6 +69,8 @@ Commands executed:
 
 ![Clean Bandit scan](./assets/bandit-clean.png)
 
+<sub>[View original](./assets/bandit-clean.png)</sub>
+
 ## Additional Manual Testing
 
 Manual testing revealed that `float()` accepts special values such as `nan` and `inf`. The remediated application now validates input numbers with `math.isfinite()`.
@@ -76,3 +84,5 @@ This exercise covered the SAST workflow: identifying an unsafe construct, review
 A key lesson is that zero scanner findings do not prove an application is completely secure. Automated scanning should be combined with manual code review and testing.
 
 *This project is intended for educational purposes only.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

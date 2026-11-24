@@ -1,10 +1,10 @@
-# API Testing Lab 01 — REST API Fundamentals
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 API Testing
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# REST API Fundamentals
 
-**Status:** Completed  
-**Testing type:** Functional API Testing  
-**Result:** 34/34 tests passed
+**Recorded finding.** Six HTTP requests, five methods and 34 functional assertions. The recorded run passed 34 of 34. The collection export was subsequently corrected. A run of that corrected file has yet to be confirmed.
+
+[Original screenshots](assets/) · [Postman collection](rest-api-tests.postman_collection.json)
 
 ## Objective
 
@@ -59,7 +59,12 @@ Automated checks:
 
 **Result: 9/9 PASSED.**
 
+<details>
+<summary>Retrieve an existing user</summary>
+
 ![Retrieve an existing user](./assets/get-user-200.png)
+
+</details>
 
 ## 2. GET — Negative Testing
 
@@ -77,7 +82,12 @@ Automated checks:
 
 The 404 status is an expected result in this negative test scenario. A test passes when the actual result matches the expected behavior, regardless of whether the HTTP response represents a success or an error status.
 
+<details>
+<summary>Retrieve a nonexistent user</summary>
+
 ![Retrieve a nonexistent user](./assets/get-user-404.png)
+
+</details>
 
 ## 3. POST — Create a Post
 
@@ -103,7 +113,12 @@ Automated checks:
 
 The generated identifier was not restricted to the specific value 101 because real-world APIs may assign resource identifiers dynamically.
 
+<details>
+<summary>Create a post</summary>
+
 ![Create a post](./assets/post-create-201.png)
+
+</details>
 
 ## 4. PUT — Replace a Post
 
@@ -122,7 +137,12 @@ Automated checks:
 
 **Result: 6/6 PASSED.**
 
+<details>
+<summary>Replace an existing post</summary>
+
 ![Replace an existing post](./assets/put-update-200.png)
+
+</details>
 
 ## 5. PATCH — Partially Update a Post
 
@@ -145,7 +165,12 @@ Special attention was given to detecting unintended changes in the other propert
 
 Checking the presence of a property alone is insufficient to demonstrate that its value remains unchanged. Therefore, equality assertions were used to validate the expected original content.
 
+<details>
+<summary>Partially update a post</summary>
+
 ![Partially update a post](./assets/patch-update-200.png)
+
+</details>
 
 ## 6. DELETE — Remove a Post
 
@@ -161,7 +186,12 @@ Automated checks:
 
 **Result: 3/3 PASSED.**
 
+<details>
+<summary>Remove a post</summary>
+
 ![Remove a post](./assets/delete-post-200.png)
+
+</details>
 
 ## Test Automation
 
@@ -186,6 +216,8 @@ The assertion was corrected, demonstrating that passing tests do not necessarily
 
 ## Collection Runner Results
 
+> Six HTTP requests, five methods and 34 functional assertions. The recorded run passed 34 of 34. The collection export was subsequently corrected. A run of that corrected file has yet to be confirmed.
+
 All six requests were executed sequentially in a single functional testing iteration.
 
 | Metric | Result |
@@ -202,6 +234,8 @@ All six requests were executed sequentially in a single functional testing itera
 | Average response time | 1063 ms |
 
 ![Collection Runner results](./assets/collection-run-results.png)
+
+<sub>[View original](./assets/collection-run-results.png)</sub>
 
 Execution times represent a single collection run and should not be interpreted as load testing results.
 
@@ -231,10 +265,12 @@ Execution times represent a single collection run and should not be interpreted 
 
 This lab covered five common HTTP methods, six API testing scenarios, and 34 automated assertions.
 
-All automated checks passed successfully.
+All 34 assertions passed in the recorded run, before the collection export was corrected.
 
 The main takeaway is that effective API testing requires more than checking HTTP status codes. Response content, data types, required properties, and expected application behavior must also be validated.
 
 A successful collection run demonstrates compliance with the tested functional expectations but does not prove that the API is completely secure or free of other defects.
 
 *This lab was conducted solely for educational purposes using a public demonstration API.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

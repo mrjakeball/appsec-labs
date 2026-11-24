@@ -1,24 +1,20 @@
-# 🔐 Lab 02 — Unprotected Admin Functionality with Unpredictable URL
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 Web Security
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# Unpredictable Admin URL
 
-**Platform:** PortSwigger Web Security Academy  
-**Category:** Access Control  
-**Difficulty:** Apprentice  
-**Status:** ✅ Solved  
-**Primary Tool:** Burp Suite Community Edition
+**Recorded finding.** The client could discover the panel’s unpredictable address. Access to both the panel and its actions must be decided by the user’s role.
 
-[Open the Original Lab](https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
+PortSwigger Web Security Academy · Apprentice · Burp Suite Community
 
----
+[Original screenshots](assets/) · [PortSwigger](https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality-with-unpredictable-url)
 
-## 🎯 Objective
+## Objective
 
 Discover an administrative interface with an unpredictable URL and evaluate whether its functionality is properly protected.
 
 The objective was to locate the administrative panel and delete the test user `carlos`.
 
-## 🔍 Identified Vulnerability
+## Identified Vulnerability
 
 **Type:** Broken Access Control — Unprotected Administrative Functionality.
 
@@ -35,14 +31,14 @@ The server also fails to properly enforce administrator-level authorization for 
 
 **Key finding:** An unpredictable URL does not replace proper server-side access control.
 
-## 🛠️ Tools Used
+## Tools Used
 
 - **Burp Suite Community Edition** — manual web application security testing.
 - **Proxy → HTTP History** — inspection of HTTP traffic.
 - **Repeater** — modification and replay of HTTP requests.
 - **Burp Browser** — interaction with the training application.
 
-## 🧪 Testing Process
+## Testing Process
 
 ### Step 1. Application Reconnaissance
 
@@ -102,19 +98,15 @@ Within the authorized training environment, deleted the test user `carlos`.
 - The user `carlos` disappeared from the user list.
 - PortSwigger marked the laboratory as **Solved**.
 
----
-
-## 📸 Proof of Completion
+## Proof of Completion
 
 <p align="center">
-  <img src="./assets/lab-02-solved.png" alt="Burp Suite Repeater — PortSwigger Lab 02 successfully solved" width="100%" />
+  <a href="./assets/lab-02-solved.png"><img src="./assets/lab-02-solved.png" alt="Burp Suite Repeater — PortSwigger Lab 02 successfully solved" width="100%" /></a>
 </p>
 
 *Final result: Lab Solved, confirming the successful deletion of the test user. Session data has been hidden.*
 
----
-
-## 🛡️ Remediation Recommendations
+## Remediation Recommendations
 
 1. **Server-side authorization.** Enforce administrator privilege checks on every protected endpoint.
 2. **Role-based access control.** Restrict administrative operations to authorized accounts.
@@ -123,7 +115,7 @@ Within the authorized training environment, deleted the test user `carlos`.
 5. **Client-side security.** Never treat JavaScript-based link hiding as an access-control mechanism.
 6. **Security testing.** Add tests verifying that ordinary user sessions cannot access administrative endpoints.
 
-## ✅ Result
+## Result
 
 **Lab successfully completed.**
 
@@ -138,6 +130,6 @@ Within the authorized training environment, deleted the test user `carlos`.
 
 **Independence level:** discovered the administrative path independently; received guidance while troubleshooting the HTTP request.
 
----
-
 *All testing was performed exclusively within the authorized PortSwigger Web Security Academy environment.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

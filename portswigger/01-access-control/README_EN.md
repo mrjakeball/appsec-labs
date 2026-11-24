@@ -1,24 +1,20 @@
-# 🔐 Lab 01 — Unprotected Admin Functionality
+[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 Web Security
 
-[🇷🇺 Русский](./README.md) | [🇬🇧 English](./README_EN.md)
+# Unprotected Admin Functionality
 
-**Platform:** PortSwigger Web Security Academy  
-**Category:** Access Control  
-**Difficulty:** Apprentice  
-**Status:** ✅ Solved  
-**Primary Tool:** Burp Suite Community Edition
+**Recorded finding.** The server accepted an administrative action without checking the role. Each privileged action needs its own server-side authorization check.
 
-[Open the Original Lab](https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality)
+PortSwigger Web Security Academy · Apprentice · Burp Suite Community
 
----
+[Original screenshots](assets/) · [PortSwigger](https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality)
 
-## 🎯 Objective
+## Objective
 
 Identify an administrative interface with insufficient access control and demonstrate that privileged actions can be performed without administrator privileges.
 
 The objective of this lab was to delete the test user `carlos`.
 
-## 🔍 Identified Vulnerability
+## Identified Vulnerability
 
 **Type:** Broken Access Control — Unprotected Administrative Functionality.
 
@@ -35,14 +31,14 @@ The location of the administrative interface is also disclosed through the publi
 
 Disclosing a path in `robots.txt` is not the primary vulnerability. The critical issue is the lack of proper server-side access control.
 
-## 🛠️ Tools Used
+## Tools Used
 
 - **Burp Suite Community Edition** — HTTP traffic analysis.
 - **Proxy → HTTP History** — inspection of application requests.
 - **Repeater** — manual modification and replay of HTTP requests.
 - **Burp Browser** — interaction with the training application.
 
-## 🧪 Testing Process
+## Testing Process
 
 ### Step 1. HTTP Traffic Analysis
 
@@ -106,19 +102,17 @@ After sending the request:
 
 This confirmed that an administrative operation could be performed without the required privileges.
 
----
-
-## 📸 Proof of Completion
+## Proof of Completion
 
 The following screenshot was captured in Burp Suite Repeater after completing the lab.
 
 ![PortSwigger — Unprotected Admin Functionality lab successfully solved](./assets/lab-01-solved.png)
 
+<sub>[View original](./assets/lab-01-solved.png)</sub>
+
 *Result: Lab Solved. User carlos was deleted. The screenshot shows the final state of the administrative interface.*
 
----
-
-## 🛡️ Remediation Recommendations
+## Remediation Recommendations
 
 1. **Authentication.** Require users to authenticate before accessing administrative functionality.
 2. **Authorization.** Enforce server-side administrator privilege checks on every protected endpoint.
@@ -129,7 +123,7 @@ The following screenshot was captured in Burp Suite Repeater after completing th
 
 **Key Principle:** Access control must be enforced on the server regardless of the user interface or HTTP client.
 
-## ✅ Result
+## Result
 
 **Lab successfully completed.**
 
@@ -143,6 +137,6 @@ Practical skills gained:
 
 **Independence level:** completed with guided learning hints.
 
----
-
 *All testing was performed exclusively within the authorized PortSwigger Web Security Academy environment.*
+
+[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)
