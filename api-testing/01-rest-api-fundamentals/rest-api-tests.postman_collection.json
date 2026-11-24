@@ -47,7 +47,7 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});\n\npm.test(\"Response body is empty object\", function () {\n    pm.expect(pm.response.json()).to.eql({});"
+              "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});\n\npm.test(\"Response body is empty object\", function () {\n    pm.expect(pm.response.json()).to.eql({});\n});"
             ]
           }
         }
