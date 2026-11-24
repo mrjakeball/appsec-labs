@@ -1,4 +1,10 @@
-[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 SAST
+<p>
+<a href="README.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/ru-off.svg" height="32" alt="Русский"></a>
+<a href="README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/en-on.svg" height="32" alt="English · selected"></a>
+<a href="https://github.com/mrjakeball/portfolio/blob/main/README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/catalog-en.svg" height="32" alt="Project catalogue"></a>
+</p>
+
+[AppSec Labs](../../README_EN.md)　 /　 SAST
 
 # OS Command Injection
 
@@ -194,4 +200,4 @@ Follow-up testing confirmed that the previous injection technique no longer work
 
 *This lab was conducted solely for educational purposes against a self-developed local application.*
 
-[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)
+[Report catalogue](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

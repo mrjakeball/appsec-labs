@@ -1,4 +1,10 @@
-[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 API Testing
+<p>
+<a href="README.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/ru-off.svg" height="32" alt="Русский"></a>
+<a href="README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/en-on.svg" height="32" alt="English · selected"></a>
+<a href="https://github.com/mrjakeball/portfolio/blob/main/README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/catalog-en.svg" height="32" alt="Project catalogue"></a>
+</p>
+
+[AppSec Labs](../../README_EN.md)　 /　 API Testing
 
 # REST API Fundamentals
 
@@ -273,4 +279,4 @@ A successful collection run demonstrates compliance with the tested functional e
 
 *This lab was conducted solely for educational purposes using a public demonstration API.*
 
-[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)
+[Report catalogue](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)

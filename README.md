@@ -1,10 +1,14 @@
-**RU** · [EN](README_EN.md)　 /　 [Профиль](https://github.com/mrjakeball) · [Каталог проектов](https://github.com/mrjakeball/portfolio)
+<p>
+<a href="README.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/ru-on.svg" height="32" alt="Русский · выбран"></a>
+<a href="README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/en-off.svg" height="32" alt="English"></a>
+<a href="https://github.com/mrjakeball/portfolio"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/catalog-ru.svg" height="32" alt="Каталог проектов"></a>
+</p>
 
 # AppSec Labs
 
-Шесть учебных работ по контролю доступа, статическому анализу Python и функциональным проверкам REST API. У каждой есть отчёт на двух языках и исходные материалы.
+Изучаю контроль доступа, статический анализ Python и функциональные проверки REST API. В отчётах собраны наблюдения, исходные материалы и выводы по каждому сценарию.
 
-![Web Security · 3 / SAST · 2 / API Testing · 1](assets/social-preview.jpg)
+![Web Security · SAST · API Testing](assets/social-preview.jpg)
 
 ## Web Security
 

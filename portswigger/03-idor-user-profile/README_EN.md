@@ -1,4 +1,10 @@
-[RU](README.md) · **EN**　 /　 [AppSec Labs](../../README_EN.md)　 /　 Web Security
+<p>
+<a href="README.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/ru-off.svg" height="32" alt="Русский"></a>
+<a href="README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/en-on.svg" height="32" alt="English · selected"></a>
+<a href="https://github.com/mrjakeball/portfolio/blob/main/README_EN.md"><img src="https://raw.githubusercontent.com/mrjakeball/mrjakeball/main/assets/ui/catalog-en.svg" height="32" alt="Project catalogue"></a>
+</p>
+
+[AppSec Labs](../../README_EN.md)　 /　 Web Security
 
 # IDOR · User Profile
 
@@ -142,4 +148,4 @@ Changing the HTTP method from GET to POST would not fix the vulnerability. Prope
 
 *All testing was performed exclusively within the authorized PortSwigger Web Security Academy environment. No real user data or secrets are published in this report.*
 
-[All six reports](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)
+[Report catalogue](../../README_EN.md) · [Profile](https://github.com/mrjakeball/mrjakeball/blob/main/README_EN.md) · [Project catalogue](https://github.com/mrjakeball/portfolio/blob/main/README_EN.md)
