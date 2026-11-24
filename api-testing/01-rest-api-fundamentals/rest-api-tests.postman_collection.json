@@ -1,0 +1,229 @@
+{
+  "info": {
+    "_postman_id": "b96cc630-7718-4e91-a7f6-6bfb66c30050",
+    "name": "REST API — Testing Fundamentals",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59202146",
+    "_collection_link": "https://go.postman.co/collection/59202146-b96cc630-7718-4e91-a7f6-6bfb66c30050?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET — Existing user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const data = pm.response.json();\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"User ID is 1\", function () {\n    pm.expect(data.id).to.eql(1);\n});\n\npm.test(\"User name is correct\", function () {\n    pm.expect(data.name).to.eql(\"Leanne Graham\");\n});\n\npm.test(\"Username is correct\", function () {\n    pm.expect(data.username).to.eql(\"Bret\");\n});\n\npm.test(\"User ID is a number\", function () {\n    pm.expect(data.id).to.be.a(\"number\");\n});\n\npm.test(\"User name is a string\", function () {\n    pm.expect(data.name).to.be.a(\"string\");\n});\n\npm.test(\"User email is a string\", function () {\n    pm.expect(data.email).to.be.a(\"string\");\n});\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});\n\npm.test(\"Email property exists\", function () {\n    pm.expect(data).to.have.property(\"email\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET — Nonexisting user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});\n\npm.test(\"Response body is empty object\", function () {\n    pm.expect(data).to.be.empty;\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users/999",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST — Create post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const data = pm.response.json();\n\npm.test(\"Status is 201\", function (){\n    pm.response.to.have.status(201)\n});\n\npm.test(\"Post title is correct\", function (){\n    pm.expect(data.title).to.eql(\"My first API test\")\n});\n\npm.test(\"Post body is correct\", function (){\n    pm.expect(data.body).to.eql(\"Learning REST API with Postman\")\n});\n\npm.test(\"User ID is correct\", function (){\n    pm.expect(data.userId).to.eql(1)\n});\n\npm.test(\"Post ID exists\", function (){\n    pm.expect(data).to.have.property(\"id\")\n});\n\npm.test(\"Post ID is a number\", function (){\n    pm.expect(data.id).to.be.a(\"number\")\n});\n\npm.test(\"Response content type is JSON\", function (){\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\")\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"My first API test\",\n    \"body\": \"Learning REST API with Postman\",\n    \"userId\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT — Replace post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const data = pm.response.json();\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Post ID is correct\", function () {\n    pm.expect(data.id).to.eql(1);\n});\n\npm.test(\"Post title is correct\", function () {\n    pm.expect(data.title).to.eql(\"Updated post\");\n});\n\npm.test(\"Post body is correct\", function () {\n    pm.expect(data.body).to.eql(\"Testing PUT request\");\n});\n\npm.test(\"User ID is correct\", function () {\n    pm.expect(data.userId).to.eql(2);\n});\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n    \"title\": \"Updated post\",\n    \"body\": \"Testing PUT request\",\n    \"userId\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH — Update post title",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const data = pm.response.json();\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Post ID remains unchanged\", function () {\n    pm.expect(data.id).to.eql(1);\n});\n\npm.test(\"Post title is updated\", function () {\n    pm.expect(data.title).to.eql(\"Learning PATCH method\");\n});\n\npm.test(\"User ID remains unchanged\", function () {\n    pm.expect(data.userId).to.eql(1);\n});\n\npm.test(\"Post body remains unchanged\", function () {\n    pm.expect(data.body).to.eql(\"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\");\n});\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Learning PATCH method\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE — Remove post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response body is an empty object\", function () {\n    const data = pm.response.json();\n    pm.expect(data).to.eql({});\n});\n\npm.test(\"Response content type is JSON\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.include(\"application/json\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
